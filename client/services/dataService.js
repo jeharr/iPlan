@@ -1,5 +1,5 @@
 angular.module('iplanApp')
-.factory('DataService', function(){
+.factory('DataService', ['HttpService', '$location', function(HttpService, $location){
 
   var currentEvent = {};
   var currentUser = {};
@@ -19,13 +19,25 @@ angular.module('iplanApp')
   var getCurrentUser = function(userId){
     return currentUser;
   };
+  var setEvent = function(){
+    var evtId = $location.$$path.replace('/events/', '');
+    HttpService.getEvent(evtId)
+    .then(function(response){
+      setCurrentEvent(response.data);
+      return response.data;
+    })
+    .catch(function(err){
+      console.log('err in evtCtrl setEvent: ', err);
+    });
+  }
 
   return {
     currentEvent: currentEvent,
     setCurrentEvent: setCurrentEvent,
     getCurrentEvent: getCurrentEvent,
     setCurrentUser: setCurrentUser,
-    getCurrentUser: getCurrentUser
+    getCurrentUser: getCurrentUser,
+    setEvent: setEvent
   };
 
-});
+}]);

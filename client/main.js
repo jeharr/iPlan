@@ -5,7 +5,8 @@ angular.module('iplanApp', ['ngRoute'])
     templateUrl: 'index.html'
   })
   .when('/events/:event_id', {
-    templateUrl: './eventView/eventView.html'
+    templateUrl: './eventView/eventView.html',
+    controller: 'EventViewController'
   })
   .otherwise({
     redirectTo: '/'
@@ -23,8 +24,9 @@ function MainController(HttpService, DataService, $location){
   self.postEvent = function(){
     HttpService.postEvent({name: self.eventName})
     .then(function(response){
-      DataService.setCurrentEvent(response.data);
+      //DataService.setCurrentEvent(response.data);
       $location.path('/events/' + response.data.id);
+      DataService.setEvent();
       console.log('success response: ', response.data);
     })
     .catch(function(err){

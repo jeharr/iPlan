@@ -1,4 +1,4 @@
-<div ng-init="evtCtrl.setEvent()">
+<div>
   <form name="placeForm" ng-submit="evtCtrl.postPlace(placeForm.$valid)" novalidate>
     <input type="text" ng-model="evtCtrl.placeName" required>
     <button type="submit" ng-disabled="placeForm.$invalid">Add new place!!!!!</button>

@@ -7,24 +7,14 @@ function EventViewController(HttpService, DataService, $location, $route, $route
   self.placeName;   // tied to input box in eventView.html
   self.currentEvent = DataService.currentEvent;
 
-  self.setEvent = function(){
-    var evtId = $location.$$path.replace('/events/', '');
-    HttpService.getEvent(evtId)
-    .then(function(response){
-      DataService.setCurrentEvent(response.data);
-      return response.data;
-    })
-    .catch(function(err){
-      console.log('err in evtCtrl setEvent: ', err);
-    });
-  }
+  // self.setEvent = DataService.setEvent;
 
   self.postPlace = function(){ // tied to form in eventView.html
     var evtId = $location.$$path.replace('/events/', '');
     HttpService.postPlace({name: self.placeName, event_id: evtId})
     .then(function(response){
       console.log('postPlace success response: ', response.data);
-      self.setEvent();
+      DataService.setEvent();
     })
     .catch(function(err){
       console.log('error in posting place: ', err);
@@ -36,6 +26,9 @@ function EventViewController(HttpService, DataService, $location, $route, $route
     place.votes++;
     HttpService.postPlace(place);
   }
+
+  DataService.setEvent();
+
 };
 
 function eventViewDir(){
