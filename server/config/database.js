@@ -32,7 +32,7 @@ var buildTable = function(name, callback){
         return { name: name, created: true };
       } else {
         return { name: name, created: false };
-      }
+ef      }
     } else { return response; }
   });
 };

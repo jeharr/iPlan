@@ -10,15 +10,17 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine'],
-
+    frameworks: ['browserify','jasmine'],
 
     // list of files / patterns to load in the browser
     files: [
       'bower_components/angular/angular.js',
       'bower_components/angular-mocks/angular-mocks.js',
       'bower_components/angular-resource/angular-resource.js',
-      'iPlan/**/*.js',
+      'bower_components/angular-route/angular-route.js',
+      'client/*.js',
+      'client/eventView/*.js',
+      'client/services/*.js',
       'test/*.js'
     ],
 
@@ -31,9 +33,12 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'test/*.js': ['browserify']
     },
 
-
+    browserify: {
+      debug: true,
+    },
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
@@ -66,8 +71,15 @@ module.exports = function(config) {
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: false,
 
+    plugins : [
+            'karma-browserify',
+            'karma-chrome-launcher',
+            'karma-jasmine'
+            ],
+
     // Concurrency level
     // how many browser should be started simultanous
     concurrency: Infinity
+
   })
 }
