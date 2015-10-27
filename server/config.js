@@ -3,7 +3,7 @@ var Promise = require('bluebird');
 var knex = require('knex')({
   client: process.env.dbClient || 'postgres',
   connection: {
-    host     : process.env.dbHost || 'localhost',
+    host     : process.env.dbHost || '127.0.0.1',
     user     : process.env.dbUser || 'root',
     password : process.env.dbPassword || 'ok',
     database : process.env.dbDatabase || 'iplan',
@@ -40,22 +40,21 @@ var events = buildTable('events', function(table){
   table.increments('id').primary();
   table.string('name').notNullable();
   table.date('date');
-  table.integer('user_id').references('users.id');
 });
 
 var places = buildTable('places', function(table){
   table.increments('id').primary();
   table.string('name').notNullable();
   table.integer('votes');
-  table.integer('event_id').references('events.id');
+  table.integer('event_id');
 });
 
 var users = buildTable('users', function(table){
   table.increments('id').primary();
-  table.string('facebook_id');
-  table.string('name').notNullable();
-  table.string('email').notNullable();
-  table.string('token');
+  table.integer('facebook_id').notNullable();
+  table.string('first_name').notNullable();
+  table.string('last_name').notNullable();
+  table.string('email');
 });
 
 var tables = [events, places, users];
