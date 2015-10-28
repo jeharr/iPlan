@@ -25,6 +25,7 @@ module.exports = function(config) {
       'client/eventView/*.js',
       'client/services/*.js',
       'test/**/*.js'
+      'test/*.js'
     ],
 
 
@@ -43,6 +44,7 @@ module.exports = function(config) {
     browserify: {
       debug: true,
     },
+
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
@@ -84,6 +86,5 @@ module.exports = function(config) {
     // Concurrency level
     // how many browser should be started simultanous
     concurrency: Infinity
-
   })
 }

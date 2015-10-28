@@ -5,7 +5,11 @@ var knex = require('knex')({
   connection: {
     host     : process.env.dbHost || '127.0.0.1',
     user     : process.env.dbUser || 'root',
+<<<<<<< HEAD
     password : process.env.dbPassword || '',
+=======
+    password : process.env.dbPassword || 'ok',
+>>>>>>> 2f217c727152cdfd01cb0d19c096637c07e5f7b7
     database : process.env.dbDatabase || 'iplan',
     charset  : 'utf8'
   }
