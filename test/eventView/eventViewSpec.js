@@ -1,6 +1,6 @@
 describe('Unit: EventViewController', function() {
   // Load the module with MainController
-  beforeEach(module('ip'));
+  beforeEach(module('iplanApp'));
 
   var ctrl, scope;
   // inject the $controller and $rootScope services
@@ -22,6 +22,7 @@ describe('Unit: EventViewController', function() {
         scope.upVote(place);
         expect(place.id).toBeTruthy();
         expect(place.votes).toEqual(1);
-    });
+      });
+    })
   })
 })
