@@ -30,13 +30,7 @@ module.exports = function(config) {
 
     // list of files to exclude
     exclude: [
-      'bower_components/auth0-angular/Gruntfile.js',
-      'bower_components/auth0-lock/Gruntfile.js',
-      'bower_components/auth0.js/Gruntfile.js',
-      'bower_components/auth0-lock/index.js',
-      'bower_components/auth0-lock/standalone.js',
-      'bower_components/auth0.js/index.js',
-      'bower_components/auth0.js/standalone.js'
+
     ],
 
 
