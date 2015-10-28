@@ -18,15 +18,25 @@ module.exports = function(config) {
       'bower_components/angular-mocks/angular-mocks.js',
       'bower_components/angular-resource/angular-resource.js',
       'bower_components/angular-route/angular-route.js',
+      'bower_components/auth0-angular/*.js',
+      'bower_components/auth0-lock/*.js',
+      'bower_components/auth0.js/*.js',
       'client/*.js',
       'client/eventView/*.js',
       'client/services/*.js',
-      'test/*.js'
+      'test/**/*.js'
     ],
 
 
     // list of files to exclude
     exclude: [
+      'bower_components/auth0-angular/Gruntfile.js',
+      'bower_components/auth0-lock/Gruntfile.js',
+      'bower_components/auth0.js/Gruntfile.js',
+      'bower_components/auth0-lock/index.js',
+      'bower_components/auth0-lock/standalone.js',
+      'bower_components/auth0.js/index.js',
+      'bower_components/auth0.js/standalone.js'
     ],
 
 
