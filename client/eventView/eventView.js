@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 (function(){
   angular.module('iplanApp')
   .controller('EventViewController', ['HttpService', 'DataService', '$location', '$route', '$routeParams', EventViewController])
@@ -145,7 +144,7 @@
       controllerAs: 'evtCtrl',
       bindToController: true
     }
-=======
+
 angular.module('iplanApp')
 .controller('EventViewController', ['HttpService', 'DataService', '$location', '$route', '$routeParams', EventViewController])
 .directive('eventViewDir', eventViewDir);
@@ -188,6 +187,5 @@ function eventViewDir(){
     controller: 'EventViewController',
     controllerAs: 'evtCtrl',
     bindToController: true
->>>>>>> 27dc421ca7f6042c7ae4db041014461617e692bb
   }
 })();
