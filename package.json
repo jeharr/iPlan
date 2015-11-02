@@ -52,6 +52,16 @@
     "jsonp": "~0.2.0",
     "json-fallback": "0.0.1",
     "sizzle": "~2.2.1",
-    "karma-chrome-launcher": "~0.2.1"
+    "auth0-js": "~6.7.6",
+    "xtend": "~4.0.1",
+    "winchan": "~0.1.2",
+    "Base64": "~0.3.0",
+    "qs": "~5.2.0",
+    "reqwest": "~2.0.5",
+    "matchdep": "~1.0.0",
+    "through": "~2.3.8",
+    "mold-source-map": "~0.4.0",
+    "css-prefix": "0.0.2",
+    "ometajs": "~4.0.0"
   }
 }
