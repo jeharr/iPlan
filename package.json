@@ -51,6 +51,7 @@
     "blueimp-md5": "~1.1.1",
     "jsonp": "~0.2.0",
     "json-fallback": "0.0.1",
-    "sizzle": "~2.2.1"
+    "sizzle": "~2.2.1",
+    "karma-chrome-launcher": "~0.2.1"
   }
 }

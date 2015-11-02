@@ -25,6 +25,7 @@ module.exports = function(config) {
       'client/eventView/*.js',
       'client/services/*.js',
       'test/**/*.js'
+      'test/*.js'
     ],
 
 
@@ -41,6 +42,7 @@ module.exports = function(config) {
       'client/*.js': ['browserify'],
       'client/**/*.js': ['browserify'],
       'test/**/*.js': ['browserify']
+      'test/*.js': ['browserify']
     },
 
     browserify: {
@@ -92,6 +94,5 @@ module.exports = function(config) {
     // Concurrency level
     // how many browser should be started simultanous
     concurrency: Infinity
-
   })
 }
