@@ -39,6 +39,18 @@
     "jasmine-core": "~2.3.4",
     "karma-jasmine": "~0.3.6",
     "karma-chrome-launcher": "~0.2.1",
-    "karma-browserify": "~4.4.0"
+    "karma-browserify": "~4.4.0",
+    "brfs": "~1.4.1",
+    "ejsify": "~1.0.0",
+    "packageify": "~0.2.3",
+    "debug": "~2.2.0",
+    "trim": "0.0.1",
+    "password-sheriff": "~1.0.0",
+    "bean": "~1.0.15",
+    "bonzo": "~2.0.0",
+    "blueimp-md5": "~1.1.1",
+    "jsonp": "~0.2.0",
+    "json-fallback": "0.0.1",
+    "sizzle": "~2.2.1"
   }
 }

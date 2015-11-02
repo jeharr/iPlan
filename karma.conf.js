@@ -37,11 +37,19 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'test/*.js': ['browserify']
+      'bower_components/**/*.js': ['browserify'],
+      'client/*.js': ['browserify'],
+      'client/**/*.js': ['browserify'],
+      'test/**/*.js': ['browserify']
     },
 
     browserify: {
       debug: true,
+      configure: function(bundle){
+        bundle.on('prebundle', function(){
+          bundle.external('foobar');
+        });
+      }
     },
     // test results reporter to use
     // possible values: 'dots', 'progress'
