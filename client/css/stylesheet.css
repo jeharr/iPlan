@@ -8,6 +8,10 @@ button:hover {
   background-color:#01d6bf
 }
 
+strong {
+  color:#01d6bf;
+}
+
 .background {
   position: fixed;
   top: 0;
