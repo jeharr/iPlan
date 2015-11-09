@@ -14,11 +14,11 @@
 
 <body>
 <div class="background"></div>
-<div class="wrapper" ng-controller="LoginController as loginCtrl" ng-cloak>
-  <div ng-if="!loginCtrl.hasToken" ng-cloak>
-    <div class="section-one" ng-cloak>
+<div class="wrapper" ng-controller="LoginController as loginCtrl">
+  <div ng-if="!loginCtrl.hasToken">
+    <div class="section-one">
       <!-- header navigation -->
-      <div class="header-nav" ng-cloak>
+      <div class="header-nav">
         <div class="logo-header">
           <span class="logo-green-i">i</span>Plan
         </div> 
@@ -42,7 +42,7 @@
   </div> <!-- END ng-if !hasToken -->
 
   <!-- ng-if hasToken -->
-  <div ng-if="loginCtrl.hasToken" ng-cloak>
+  <div ng-if="loginCtrl.hasToken">
   <event-list></event-list>
 
     <div class="left-padding">
