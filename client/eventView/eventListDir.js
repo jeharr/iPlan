@@ -6,6 +6,5 @@ angular.module('iplanApp')
       restrict: 'E',
       templateUrl: '/eventView/eventList.html',
       replace: true,
-
     }
   }

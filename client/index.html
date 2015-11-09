@@ -3,6 +3,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>iPlan</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans|Lato' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <!--Import materialize.css-->
@@ -13,11 +14,11 @@
 
 <body>
 <div class="background"></div>
-<div class="wrapper" ng-controller="LoginController as loginCtrl" ng-cloak>
-  <div ng-if="!loginCtrl.hasToken" ng-cloak>
-    <div class="section-one" ng-cloak>
+<div class="wrapper" ng-controller="LoginController as loginCtrl">
+  <div ng-if="!loginCtrl.hasToken">
+    <div class="section-one">
       <!-- header navigation -->
-      <div class="header-nav" ng-cloak>
+      <div class="header-nav">
         <div class="logo-header">
           <span class="logo-green-i">i</span>Plan
         </div> 
@@ -31,7 +32,9 @@
         <p>The Simplest Way</p>
         <p>To Organize Events</p>
         <p><span>Easy Starts Here</span></p>
-        <button class="see-how" href="#how-it-works">See How It Works</button>
+        <button class="see-how" href="#how-it-works" ng-click="loginCtrl.login()">
+          See How It Works
+        </button>
       </div>
     </div><!-- END section-one -->
     
@@ -41,7 +44,7 @@
   </div> <!-- END ng-if !hasToken -->
 
   <!-- ng-if hasToken -->
-  <div ng-if="loginCtrl.hasToken" ng-cloak>
+  <div ng-if="loginCtrl.hasToken">
   <event-list></event-list>
 
     <div class="left-padding">
@@ -87,13 +90,13 @@
 <!-- APP SCRIPTS -->
 <script src="./config.js"></script>
 <script src="./main.js"></script>
-<script src="./loginController.js"></script>
+<script src="./login/loginController.js"></script>
 <script src="./services/httpService.js"></script>
 <script src="./services/dataService.js"></script>
 <script src="./eventView/eventView.js"></script>
 <script src="./eventView/eventList.js"></script>
 <script src="./newEvent/newEventButton.js"></script>
 <script src="./newEvent/newEvent.js"></script>
-<script src="./userController.js"></script>
+<script src="./users/userController.js"></script>
 </body>
 </html>

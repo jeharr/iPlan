@@ -263,18 +263,18 @@
           //hour matches //check the minutes more precisely or if it has surpassed
           if(dateMinute == filteredMinute) {
             if(!self.cutVoting) {
-              $window.location.reload()
+              // $window.location.reload()
             }
             self.cutVoting = false;
           } else if (dateMinute > filteredMinute) {
             if(!self.cutVoting) {
-              $window.location.reload()
+              // $window.location.reload()
             }
             self.cutVoting = false;
           }
         } else if (dateHour > filteredHour) {
           if(!self.cutVoting) {
-              $window.location.reload()
+              // $window.location.reload()
           }
           self.cutVoting = false;
         }
