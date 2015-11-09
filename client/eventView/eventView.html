@@ -81,7 +81,7 @@
             </div>
             <div class="event-right inline">
               <div ng-if="!evtCtrl.currentEvent.cutoff">
-                <input type="datetime-local" ng-model="evtCtrl.timerInfo" class="timer-date">
+                <input type="datetime-local" ng-model="evtCtrl.currentEvent.cutoff" class="timer-date">
                 <button class="vote-timer" ng-click="evtCtrl.createTimer()">Create a Vote Timer</button>
               </div>
               <div ng-if="evtCtrl.currentEvent.cutoff">

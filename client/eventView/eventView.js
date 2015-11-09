@@ -229,14 +229,12 @@
     };
 
     self.createTimer = function() {
-      var firstCut = new Date(self.timerInfo);
       HttpService.putEvent({
-        cutoff: self.timerInfo,
+        cutoff: self.currentEvent.cutoff,
         code: self.currentEvent.code
+      }).then(function(evt){
+        DataService.setCurrentEvent(evt.data)
       })
-      .then(function(evt){
-        DataService.setCurrentEvent(evt.data);
-      });
     }
 
     self.checkDateTime = function() {
@@ -300,7 +298,6 @@
         name: self.currentEvent.name,
         code: self.currentEvent.code
       }).then(function(evt){
-        console.log(evt.data)
         DataService.setCurrentEvent(evt.data)
       })
       self.showEditing = true;
