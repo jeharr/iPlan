@@ -310,15 +310,14 @@
       self.showEditingLocation = !self.showEditingLocation
     }
 
-    self.changeEventLocation = function(inputText) {
+    self.changeEventLocation = function() {
       HttpService.putEvent({
-        location: inputText,
+        location: self.currentEvent.location,
         code: self.currentEvent.code
-      })
-      .then(function(evt){
+      }).then(function(evt){
         DataService.setCurrentEvent(evt.data)
-        self.showEditingLocation = true;
-      });
+      })
+      self.showEditingLocation = true;
     }
 
     self.toggleDateChange = function() {
@@ -326,15 +325,13 @@
     }
 
     self.changeEventDate = function(inputText) {
-      var dates = new Date(inputText);
       HttpService.putEvent({
-        date: dates,
+        date: self.currentEvent.location,
         code: self.currentEvent.code
+      }).then(function(evt){
+        DataService.setCurrentEvent(evt.data)
       })
-      .then(function(evt){
-        DataService.setCurrentEvent(evt.data);
-        self.showDate = true;
-      });
+      self.showDate = true;
     }
 
     self.toggleTimeChange = function() {
@@ -342,14 +339,12 @@
     }
 
     self.changeEventTime = function(inputText) {
-      var timing = new Date(inputText);
       HttpService.putEvent({
-        time: timing,
+        time: self.currentEvent.time,
         code:self.currentEvent.code
+      }).then(function(evt){
+        DataService.setCurrentEvent(evt.data)
       })
-      .then(function(evt){
-        DataService.setCurrentEvent(evt.data);
-      });
       self.showTime = true;
     }
 
@@ -357,15 +352,13 @@
       self.toggleCutOff = !self.toggleCutOff
     }
 
-    self.changeCutOff = function() {
-      var cutoffTime = new Date(self.changeCutoffTime);
+    self.changeCutOff = function(inputText) {
       HttpService.putEvent({
-        cutoff: cutoffTime,
+        cutoff: self.currentEvent.cutoff,
         code:self.currentEvent.code
+      }).then(function(evt){
+        DataService.setCurrentEvent(evt.data)
       })
-      .then(function(evt){
-        DataService.setCurrentEvent(evt.data);
-      });
       self.toggleCutOff = true;
     }
 
