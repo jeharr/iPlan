@@ -10,7 +10,15 @@
             </span>
             <span ng-hide="evtCtrl.showEditing">
               <form ng-submit="evtCtrl.changeEventName()" class="inline-form">
+<<<<<<< HEAD
+<<<<<<< HEAD
                 <input class="change-name-edit" ng-model="evtCtrl.currentEvent.name" value="evtCtrl.currentEvent.name">
+=======
+                <input class="change-name-edit" ng-model="evtCtrl.currentEvent.name">
+>>>>>>> [fix] add res.json to put event set response to dataservice
+=======
+                <input class="change-name-edit" ng-model="evtCtrl.currentEvent.name">
+>>>>>>> 1db8fbbb0605678cc327dbe36ea98d878b50cd60
               </form>
             </span>
             <span class="edit-pencil">
@@ -26,8 +34,8 @@
                 {{evtCtrl.currentEvent.location}}
               </span>
               <span ng-hide="evtCtrl.showEditingLocation">
-                <form class="inline-form" ng-submit="evtCtrl.changeEventLocation(evtCtrl.changeLocation)">
-                  <input class="change-location-edit" ng-model="evtCtrl.changeLocation">
+                <form class="inline-form" ng-submit="evtCtrl.changeEventLocation()">
+                  <input class="change-location-edit" ng-model="evtCtrl.currentEvent.location">
                 </form>
               </span>
               <span class="edit-pencil">
@@ -44,8 +52,8 @@
                 </span>
                 <span ng-hide="evtCtrl.showDate">
                   <form class="inline-form">
-                    <input type="date" class="change-date-edit" ng-model="evtCtrl.evtDate">
-                    <button class="change-event-details" ng-click="evtCtrl.changeEventDate(evtCtrl.evtDate)">
+                    <input type="date" class="change-date-edit" ng-model="evtCtrl.currentEvent.date">
+                    <button class="change-event-details" ng-click="evtCtrl.changeEventDate()">
                       Change
                     </button>
                   </form>
@@ -64,8 +72,8 @@
               </div>
               <div class="inline" ng-hide="evtCtrl.showTime">
                 <form class="inline-form">
-                  <input type="time" class="change-date-edit" ng-model="evtCtrl.evtTime">
-                  <button class="change-event-details" ng-click="evtCtrl.changeEventTime(evtCtrl.evtTime)">Change</button>
+                  <input type="time" class="change-date-edit" ng-model="evtCtrl.currentEvent.time">
+                  <button class="change-event-details" ng-click="evtCtrl.changeEventTime()">Change</button>
                 </form>
               </div>
               <div class="edit-pencil inline">
@@ -77,7 +85,7 @@
             </div>
             <div class="event-right inline">
               <div ng-if="!evtCtrl.currentEvent.cutoff">
-                <input type="datetime-local" ng-model="evtCtrl.timerInfo" class="timer-date">
+                <input type="datetime-local" ng-model="evtCtrl.currentEvent.cutoff" class="timer-date">
                 <button class="vote-timer" ng-click="evtCtrl.createTimer()">Create a Vote Timer</button>
               </div>
               <div ng-if="evtCtrl.currentEvent.cutoff">
@@ -87,7 +95,15 @@
                   | date: 'shortTime'}}
                 </span>
                 <span ng-hide="evtCtrl.toggleCutOff">
+<<<<<<< HEAD
+<<<<<<< HEAD
                   <input type="datetime-local" class="timer-date-change" ng-model="evtCtrl.changeCutOffTime">
+=======
+                  <input type="datetime-local" class="timer-date-change" ng-model="evtCtrl.currentEvent.cutoff">
+>>>>>>> [fix] change put event and ng-models of event changes
+=======
+                  <input type="datetime-local" class="timer-date-change" ng-model="evtCtrl.currentEvent.cutoff">
+>>>>>>> 1db8fbbb0605678cc327dbe36ea98d878b50cd60
                   <button class="change-event-details" ng-click="evtCtrl.changeCutOff()">Change</button>
                 </span>
                 <span class="edit-pencil">
