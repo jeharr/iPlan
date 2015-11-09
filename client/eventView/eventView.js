@@ -299,10 +299,10 @@
       HttpService.putEvent({
         name: self.currentEvent.name,
         code: self.currentEvent.code
+      }).then(function(evt){
+        console.log(evt.data)
+        DataService.setCurrentEvent(evt.data)
       })
-      .then(function(evt){
-        DataService.setCurrentEvent(evt.data);
-      });
       self.showEditing = true;
     }
 
