@@ -14,8 +14,7 @@
   function userViewDir(){
     return {
       restrict: 'E',
-      // scope: {},
-      templateUrl: '/userView.html',
+      templateUrl: '/users/userView.html',
       replace: true,
       controller: 'UserController',
       controllerAs: 'userCtrl',
