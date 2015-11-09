@@ -8,6 +8,7 @@
     self.currentUser = DataService.currentUser;
     self.events = DataService.events;
     self.currentEvent = DataService.currentEvent;
+    self.isHost = DataService.isHost;
 
     self.setEvents = function(){
       HttpService.getEvents(self.currentUser.email)
@@ -23,6 +24,7 @@
       .then(function(evt){
         DataService.newEvent.status = false;
         DataService.setCurrentEvent(evt.data);
+        console.log(self.isHost.status);
         HttpService.getUsers(evtCode)
         .then(function(evtUsers){
           DataService.setUsers(evtUsers.data);
@@ -30,7 +32,7 @@
         .then(function(){
           $location.path('/events/' + evtCode);
         });
-      });  
+      });
     }
 
     self.clearCurrentEvent = function(){

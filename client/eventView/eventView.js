@@ -26,7 +26,7 @@
     self.showDate = true;
     self.showTime = true;
     self.toggleCutOff = true;
-    self.isHost = false;
+    self.isHost = DataService.isHost;
 
     self.showPlace = function(place) {
       if(self.lastChosen === place) {
@@ -58,7 +58,6 @@
       .then(function(evt){
         if(evt.data.length){
           DataService.setEvents(evt.data);
-          self.findHost();
         }
       });
     };
@@ -68,6 +67,7 @@
         HttpService.getEvent(self.eventCode)
         .then(function(response){
           DataService.setCurrentEvent(response.data);
+          self.isHost = DataService.getHost();
           angular.forEach(response.data.places, function(val, key){
             self.toggle[val.id] = self.toggle[val.id] || false;
           });
@@ -357,14 +357,6 @@
       })
       DataService.setCurrentEvent({cutoff: cutoffTime})
       self.toggleCutOff = true;
-    }
-
-    self.findHost = function(){
-      if (self.currentEvent.eventsUsers && self.currentUser.email === self.currentEvent.eventsUsers[0].email){
-        self.isHost = true;
-      } else {
-        self.isHost = false;
-      }
     }
 
     self.refresh(self.eventCode);

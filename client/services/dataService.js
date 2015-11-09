@@ -6,6 +6,7 @@
     var currentUser = {};
     var events = [];
     var users = [];
+    var isHost = {status: false};
 
     var setCurrentEvent = function(eventData){
       for(var key in currentEvent){
@@ -15,6 +16,8 @@
       for(var key in eventData){
         currentEvent[key] = eventData[key];
       }
+      findHost();
+      console.log(isHost.status);
       return currentEvent;
     };
 
@@ -81,6 +84,18 @@
       return users;
     };
 
+    var findHost = function(){
+      if (currentEvent.eventsUsers && currentUser.email === currentEvent.eventsUsers[0].email){
+        isHost.status = true;
+      } else {
+        isHost.status = false;
+      }
+    };
+
+    var getHost = function(){
+      return isHost;
+    };
+
     return {
       currentEvent: currentEvent,
       currentUser: currentUser,
@@ -95,7 +110,10 @@
       setCurrentUser: setCurrentUser,
       clearData: clearData,
       getCurrentUser: getCurrentUser,
-      setUsers: setUsers
+      setUsers: setUsers,
+      findHost: findHost,
+      isHost: isHost,
+      getHost: getHost
     };
   });
 })();
