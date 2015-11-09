@@ -293,13 +293,14 @@
       }
     }
 
-    self.changeEventName = function(inputText) {
+    self.changeEventName = function() {
       HttpService.putEvent({
-        name: inputText,
+        name: self.currentEvent.name,
         code: self.currentEvent.code
-      });
-
-      DataService.setCurrentEvent({name: inputText});
+      }).then(function(evt){
+        console.log(evt.data)
+        DataService.setCurrentEvent(evt.data)
+      })
       self.showEditing = true;
       // $window.location.reload();
     }

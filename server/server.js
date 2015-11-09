@@ -85,8 +85,11 @@ app.put('/api/events/:code', function(req, res, next){
   db.model('Event').fetchById({code: code})
   .then(function(data){
     data.save(saveTime)
-  })
-})
+    .then(function(evt){
+      res.json(evt);
+    });
+  });
+});
 
 app.get('/api/events/:code', function(req, res, next){
   var code = req.params.code;
