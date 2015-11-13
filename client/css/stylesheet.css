@@ -1,5 +1,5 @@
 body {
-  font-family: lato;
+  font-family: avenir;
   font-size:10pt;
   background-color: #EEEEEE;
 }
@@ -77,7 +77,6 @@ strong {
   position:absolute;
   text-align:center;
   z-index:0;
-  margin-bottom:300px;
 }
 
 .section-two-one {
@@ -168,10 +167,9 @@ strong {
 }
 
 .description-header {
-  margin-top:15%;
   font-size:25pt;
   color:#fff;
-  margin-bottom:2%;
+/*  margin-bottom:2%;*/
   line-height:40pt;
   font-weight:50;
   letter-spacing:0.5pt;
