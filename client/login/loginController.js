@@ -11,6 +11,8 @@
       auth.signin({}, function (profile, token) {
         store.set('profile', profile);
         store.set('token', token);
+        console.log(profile);
+        console.log(user_profile);
         self.hasToken = true;
         HttpService.getUser(profile.email)
         .then(function(response){
