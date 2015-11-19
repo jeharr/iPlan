@@ -12,7 +12,7 @@
         store.set('profile', profile);
         store.set('token', token);
         console.log(profile);
-        console.log(user_profile);
+        console.log(profile.email);
         self.hasToken = true;
         HttpService.getUser(profile.email)
         .then(function(response){
