@@ -104,10 +104,10 @@ app.post('/api/users', function(req, res, next){
   });
 });
 
-app.put('/api/users/:email', function(req, res, next){
-  var email = req.params.email;
+app.put('/api/users/:facebook_id', function(req, res, next){
+  var facebook_id = req.params.facebook_id;
   var userData = req.body;
-  db.model('User').fetchById({email: email})
+  db.model('User').fetchById({facebook_id: facebook_id})
   .then(function(data){
     data.save(userData);
   });

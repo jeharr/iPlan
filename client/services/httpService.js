@@ -24,8 +24,8 @@
         userData);
     };
 
-    var getUser = function(email){
-      return $http.get('/api/users/' + email);
+    var getUser = function(facebook_id){
+      return $http.get('/api/users/' + facebook_id);
     };
 
     var callYelp = function(options){

@@ -12,9 +12,9 @@
         store.set('profile', profile);
         store.set('token', token);
         console.log(profile);
-        console.log(profile.email);
+        console.log(profile.user_id);
         self.hasToken = true;
-        HttpService.getUser(profile.email)
+        HttpService.getUser(profile.facebook_id)
         .then(function(response){
           if(!response.data){
             var user = {

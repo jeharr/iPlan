@@ -64,9 +64,9 @@ var places = buildTable('places', function(table){
 
 var users = buildTable('users', function(table){
   table.increments('id').primary();
-  table.string('facebook_id');
+  table.string('facebook_id').unique().notNullable();
   table.string('name');
-  table.string('email').unique().notNullable();
+  table.string('email');
   table.string('picture');
 });
 
