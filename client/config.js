@@ -2,8 +2,8 @@
   angular.module('iplanApp', ['ngRoute', 'auth0', 'angular-storage', 'angular-jwt'])
   .config(function(authProvider, $routeProvider, $httpProvider, jwtInterceptorProvider){
     authProvider.init({
-      domain: 'iplan.auth0.com',
-      clientID: 'DIJQASF4ghKIEPsKoDVOLLDwg6gRYbhv'
+      domain: 'app42970661.auth0.com',
+      clientID: 'NGKVxXZ8xmMjQrpM3UuxN5BfNEmYMsCj'
     });
 
     jwtInterceptorProvider.tokenGetter = ['store', function(store) {
